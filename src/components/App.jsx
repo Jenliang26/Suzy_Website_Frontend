@@ -17,6 +17,7 @@ import {
   Button,
   Container
 } from 'react-bootstrap';
+import Home from './Home/Home';
 
 
 class App extends Component{
@@ -53,7 +54,7 @@ class App extends Component{
             <Navbar.Brand href='' id="Logo">Welcome to Sewing By Suzy!</Navbar.Brand>
             <Nav.Link id="NavLinks" href='/home'> Home</Nav.Link>
             <Nav className="ml-auto">
-              <SearchBar />
+              {/* <SearchBar /> */}
             </Nav>
             </Navbar>
           </div>
