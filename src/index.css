@@ -1,16 +1,11 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-}
-
-.container {
-  max-width: 800px;
-  margin: 30px;
-  overflow: auto;
-  min-height: 300px;
-  border: 1px solid  #7061fb;
-  padding: 30px;
-  border-radius: 5px; 
+  background-image: url(Images/1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
 }
 
 .btn {
