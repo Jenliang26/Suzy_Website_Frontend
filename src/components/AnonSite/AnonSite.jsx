@@ -11,17 +11,15 @@ const AnonSite = ({role, setRole}) => {
            <Navbar bg="black" variant="dark">
                 <NavbarBrand href="">Sewing By Suzy. ANON</NavbarBrand>
                 <Nav>
-                   <Nav.Item><Nav.Link href="/Home">Home</Nav.Link></Nav.Item>
-                   <Nav.Item><Nav.Link href="/contact">Contact</Nav.Link></Nav.Item>
+                   <Nav.Item><Nav.Link href="/home">Home</Nav.Link></Nav.Item>
                    <Nav.Item><Nav.Link href="/login">Login</Nav.Link></Nav.Item>
                    <Nav.Item><Nav.Link href="/register">Register</Nav.Link></Nav.Item>
-                   <Nav.Item><Nav.Link href="/order status">Order Status</Nav.Link></Nav.Item>
+                   <Nav.Item><Nav.Link href="/orderstatus">Order Status</Nav.Link></Nav.Item>
                 </Nav>
             </Navbar> 
         </div>
     )
 }
-
 
 
 export default AnonSite;
