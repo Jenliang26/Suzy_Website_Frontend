@@ -8,7 +8,7 @@ const EmployeeSite = ({role, setRole}) => {
 
     return (
         <div>
-            <Navbar bg="black" variant="dark">
+            <Navbar className="mynav" variant="light">
                 <NavbarBrand href="">Sewing By Suzy. OWNER</NavbarBrand>
                 <Nav>
                     <Nav.Item><Nav.Link href="/home">Home</Nav.Link></Nav.Item>
