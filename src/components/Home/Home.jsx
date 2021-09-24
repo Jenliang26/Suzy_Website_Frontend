@@ -1,5 +1,5 @@
 import React from 'react';
-import './Home.css'
+import './Home.css';
 import MyCarousel from '../Carousel/Carousel';
 
 
@@ -12,12 +12,6 @@ function Home() {
                         <MyCarousel />
                     </div>
                 </div>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
             </div>
         </div>
     )

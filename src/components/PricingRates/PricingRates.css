@@ -1,0 +1,11 @@
+#PricingRatesaalign
+{
+    text-align: center;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+table, th, td { border: 2px #2b2b2b solid; } th, td { padding: 10px 20px; }

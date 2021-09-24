@@ -7,6 +7,7 @@ import {
     Link
 } from "react-router-dom";
 import Home from './../Home/Home';
+import PricingRates from './../PricingRates/PricingRates';
 import Footer from './../Footer/Footer.jsx';
 
 const AnonSite = ({role, setRole}) => {
@@ -21,7 +22,7 @@ const AnonSite = ({role, setRole}) => {
            <Navbar className="mynav" variant="light">
                 <NavbarBrand href=""><img src={Logo}></img></NavbarBrand>
                 <Nav>
-                   <Nav.Item><Nav.Link href="/home">Home</Nav.Link></Nav.Item>
+                   <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>
                    <Nav.Item><Nav.Link href="/pricingrates">Pricing/Rates</Nav.Link></Nav.Item>
                    <Nav.Item><Nav.Link href="/login">Login</Nav.Link></Nav.Item>
                    <Nav.Item><Nav.Link href="/register">Register</Nav.Link></Nav.Item>
@@ -29,7 +30,8 @@ const AnonSite = ({role, setRole}) => {
                 </Nav>
             </Navbar>
             <Switch>
-                <Route path='/home' exact component={Home}></Route>
+                <Route path='/' exact component={Home}></Route>
+                <Route path='/pricingrates' exact component={PricingRates}></Route>
             </Switch>
             <Footer />
         </Router>

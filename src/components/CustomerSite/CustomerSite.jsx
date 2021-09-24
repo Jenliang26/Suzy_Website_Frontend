@@ -1,4 +1,13 @@
 import { Container, Nav, Navbar, NavbarBrand, NavLink } from 'react-bootstrap';
+import Logo from './../../Images/SewingBySuzyLogo2.png';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import Home from './../Home/Home';
+import Footer from './../Footer/Footer.jsx';
 
 const CustomerSite = ({role, setRole}) => {
     const onClick = () => {
@@ -8,10 +17,11 @@ const CustomerSite = ({role, setRole}) => {
 
     return (
         <div>
+        <Router>
             <Navbar className="mynav" variant="light">
-                <NavbarBrand href="">Sewing By Suzy. CUSTOMER</NavbarBrand>
+                <NavbarBrand href=""><img src={Logo}></img></NavbarBrand>
                 <Nav>
-                    <Nav.Item><Nav.Link href="/home">Home</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/pricingrates">Pricing/Rates</Nav.Link></Nav.Item>
                     <Nav.Item><NavLink href="/profile">Profile</NavLink></Nav.Item>
                     <Nav.Item><Nav.Link href="/yourorders">Your Orders</Nav.Link></Nav.Item>
@@ -19,6 +29,11 @@ const CustomerSite = ({role, setRole}) => {
                     <Nav.Item><Nav.Link href="/logout">Log Out</Nav.Link></Nav.Item>
                 </Nav>
             </Navbar>
+            <Switch>
+                <Route path='/' exact component={Home}></Route>
+            </Switch>
+            <Footer />
+            </Router>
         </div>
     )
 }
