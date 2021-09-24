@@ -7,6 +7,7 @@ import {
     Link
 } from "react-router-dom";
 import Home from './../Home/Home';
+import PricingRates from './../PricingRates/PricingRates';
 import Footer from './../Footer/Footer.jsx';
 
 const CustomerSite = ({role, setRole}) => {
@@ -31,6 +32,7 @@ const CustomerSite = ({role, setRole}) => {
             </Navbar>
             <Switch>
                 <Route path='/' exact component={Home}></Route>
+                <Route path='/pricingrates' exact component={PricingRates}></Route>
             </Switch>
             <Footer />
             </Router>
