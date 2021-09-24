@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from './../Home/Home';
 import PricingRates from './../PricingRates/PricingRates';
+import Login from './../Login/Login';
 import Footer from './../Footer/Footer.jsx';
 
 const AnonSite = ({role, setRole}) => {
@@ -32,6 +33,7 @@ const AnonSite = ({role, setRole}) => {
             <Switch>
                 <Route path='/' exact component={Home}></Route>
                 <Route path='/pricingrates' exact component={PricingRates}></Route>
+                <Route path='/login' exact component={Login}></Route>
             </Switch>
             <Footer />
         </Router>

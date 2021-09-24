@@ -26,7 +26,7 @@ const CustomerSite = ({role, setRole}) => {
                     <Nav.Item><Nav.Link href="/pricingrates">Pricing/Rates</Nav.Link></Nav.Item>
                     <Nav.Item><NavLink href="/profile">Profile</NavLink></Nav.Item>
                     <Nav.Item><Nav.Link href="/yourorders">Your Orders</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/review">Review</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/reviews">Reviews</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/logout">Log Out</Nav.Link></Nav.Item>
                 </Nav>
             </Navbar>
