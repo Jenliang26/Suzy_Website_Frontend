@@ -8,6 +8,7 @@ const EmployeeSite = ({role, setRole}) => {
 
     return (
         <div>
+        <Router>
             <Navbar className="mynav" variant="light">
                 <NavbarBrand href="">Sewing By Suzy. OWNER</NavbarBrand>
                 <Nav>
@@ -19,6 +20,11 @@ const EmployeeSite = ({role, setRole}) => {
                     <Nav.Item><Nav.Link href="/logout">Log Out</Nav.Link></Nav.Item>
                 </Nav>
             </Navbar>
+            <Switch>
+                <Route path='/home' exact component={Home}></Route>
+            </Switch>
+            <Footer />
+        </Router>
         </div>
     )
 }

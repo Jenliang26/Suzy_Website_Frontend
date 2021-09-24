@@ -8,24 +8,19 @@ const Footer = () => {
         <div className="footerstyle">
         <div class="container">
                 <div class="tinyrow">
-                    <h3 class="text-center">Store Hours:</h3>
                 </div>
                 <div>
-                    <p class="text-center">Monday: Closed
-                    <br/>
+                    <p class="text-center">
+                    <b>    
+                    Monday: Closed
                     Tuesday: 9AM - 6PM
-                    <br/>
-                    Wednesday: 9AM - 6PM
-                    <br/>
                     Thursday: 9AM - 6PM
-                    <br/>
                     Friday: 9AM - 6PM
-                    <br/>
                     Saturday: 10AM - 4PM
-                    <br/>
                     Sunday: Closed
+                    </b>
                     <br/>
-                    Location: 9867 S Chicago Rd, Oak Creek, WI 53154</p>
+                    <b> Location: 9867 S Chicago Rd, Oak Creek, WI 53154</b></p>
                 </div>
             </div>
         </div>

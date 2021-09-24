@@ -1,6 +1,6 @@
 import React from 'react';
 import './Home.css'
-import Teampic from './../../Images/mmexport1632429287590.jpg';
+import MyCarousel from '../Carousel/Carousel';
 
 
 function Home() {
@@ -8,9 +8,16 @@ function Home() {
         <div>
             <div class="container">
                 <div class="row">
-                    <h1 id="Homepageh1" class="text-center">Meet Our Team!</h1>
-                <div class="text-center"><img className="teampic" src={Teampic}></img></div>
+                    <div class="text-center">
+                        <MyCarousel />
+                    </div>
                 </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
             </div>
         </div>
     )
