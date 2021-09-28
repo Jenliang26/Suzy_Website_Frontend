@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from './../Home/Home';
 import PricingRates from './../PricingRates/PricingRates';
+import Orders from '../Orders/Orders';
 import Footer from './../Footer/Footer.jsx';
 import React, {Component} from 'react';
 
@@ -36,7 +37,7 @@ class CustomerSite extends Component {
             <Switch>
                 <Route path='/' exact component={Home}></Route>
                 <Route path='/pricingrates' exact component={PricingRates}></Route>
-                <Route path='/profile'  render={props => <Profile {...props} userRole={this.props.userRole} user={this.props.user}/>} />
+                <Route path='/yourorders'  render={props => <Orders {...props} user={this.props.user}/>} />
             </Switch>
             <Footer />
             </Router>
