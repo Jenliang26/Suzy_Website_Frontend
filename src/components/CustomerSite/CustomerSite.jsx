@@ -9,14 +9,18 @@ import {
 import Home from './../Home/Home';
 import PricingRates from './../PricingRates/PricingRates';
 import Footer from './../Footer/Footer.jsx';
+import React, {Component} from 'react';
 
-const CustomerSite = ({role, setRole}) => {
-    const onClick = () => {
-        setRole('Anon');
+
+
+class CustomerSite extends Component {
+    constructor(props) {
+        super(props);
     }
 
-
-    return (
+    render (){
+        console.log(this.props.user)
+        return(
         <div>
         <Router>
             <Navbar className="mynav" variant="light">
@@ -24,7 +28,6 @@ const CustomerSite = ({role, setRole}) => {
                 <Nav>
                     <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/pricingrates">Pricing/Rates</Nav.Link></Nav.Item>
-                    <Nav.Item><NavLink href="/profile">Profile</NavLink></Nav.Item>
                     <Nav.Item><Nav.Link href="/yourorders">Your Orders</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/reviews">Reviews</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/logout">Log Out</Nav.Link></Nav.Item>
@@ -33,11 +36,13 @@ const CustomerSite = ({role, setRole}) => {
             <Switch>
                 <Route path='/' exact component={Home}></Route>
                 <Route path='/pricingrates' exact component={PricingRates}></Route>
+                <Route path='/profile'  render={props => <Profile {...props} userRole={this.props.userRole} user={this.props.user}/>} />
             </Switch>
             <Footer />
             </Router>
         </div>
-    )
+        );
+    }
 }
 
 export default CustomerSite;

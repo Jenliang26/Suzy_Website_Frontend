@@ -7,15 +7,17 @@ import {
     Link
 } from "react-router-dom";
 import Home from './../Home/Home';
+// import Inventory from './../Inventory/Inventory';
 import Footer from './../Footer/Footer.jsx';
+import React, {Component} from 'react';
 
-const EmployeeSite = ({role, setRole}) => {
-    const onClick = () => {
-        setRole('Anon');
+class EmployeeSite extends Component {
+    constructor(props) {
+        super(props);
     }
 
-
-    return (
+    render (){
+        return(
         <div>
         <Router>
             <Navbar className="mynav" variant="light">
@@ -31,11 +33,13 @@ const EmployeeSite = ({role, setRole}) => {
             </Navbar>
             <Switch>
                 <Route path='/' exact component={Home}></Route>
+                {/* <Route path='/inventory' exact component={Inventory}></Route> */}
             </Switch>
             <Footer />
         </Router>
         </div>
-    )
+        );
+    }
 }
 
 

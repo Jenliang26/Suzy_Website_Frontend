@@ -8,14 +8,16 @@ import {
 } from "react-router-dom";
 import Home from './../Home/Home';
 import Footer from './../Footer/Footer.jsx';
+import React, {Component} from 'react';
 
-const OwnerSite = ({role, setRole}) => {
-    const onClick = () => {
-        setRole('Anon');
+
+class OwnerSite extends Component {
+    constructor(props) {
+        super(props);
     }
 
-
-    return (
+    render (){
+        return (
         <div>
         <Router>
             <Navbar className="mynav" variant="light">
@@ -35,7 +37,8 @@ const OwnerSite = ({role, setRole}) => {
             <Footer />
         </Router>
         </div>
-    )
+        );
+    }
 }
 
 

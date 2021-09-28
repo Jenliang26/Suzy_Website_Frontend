@@ -4,28 +4,22 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/button';
 import './Login.css';
 import axios from 'axios';
+import jwt_decode from "jwt-decode";
 
-//const Login = ({role, setRole}) => {
-    //const onClick = () => {
-        //setRole('Anon');
-    //}
-
-
-    //return (
-        //<div></div>
-    //)
-//}
 
 class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
         username: '',
-        password: ''
+        password: '',
         }   
     }
-    
 
+    componentWillMount() {
+        console.log(this.state.userRole)
+    }
+    
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
@@ -52,15 +46,12 @@ class Login extends React.Component {
             console.log(this.state.password)
             console.log(localStorage.getItem('token'))
             localStorage.getItem('token');
-            let user = await axios.post(user_data.username)
-            this.props.setRole ("LoggedIn") 
-            this.props.setUser(user.data)
-            // window.location = '/';
+            console.log(user_data.username)
+            window.location = '/';
         }
             catch (error){
             console.log(error)
             }
-      
     }
 
     
@@ -78,6 +69,12 @@ class Login extends React.Component {
 
                     <button type="submit">Login</button>
                 </form>
+                <span>
+                    Not a member? sign up <a href='register'>here</a>
+                </span>
+                {/* <div>
+                    <Site userdata={this.props.user} />
+                </div> */}
             </div>
         )
     }

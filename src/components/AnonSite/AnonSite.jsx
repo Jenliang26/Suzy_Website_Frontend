@@ -11,14 +11,16 @@ import PricingRates from './../PricingRates/PricingRates';
 import Login from './../Login/Login';
 import Register from './../Register/Register';
 import Footer from './../Footer/Footer.jsx';
+import React, {Component} from 'react';
 
-const AnonSite = ({role, setRole}) => {
-    const onClick = () => {
-        setRole('Anon');
+
+class AnonSite extends Component {
+    constructor(props) {
+        super(props);
     }
 
-
-    return (
+    render (){
+        return(
         <div>
         <Router>
            <Navbar className="mynav" variant="light">
@@ -34,13 +36,14 @@ const AnonSite = ({role, setRole}) => {
             <Switch>
                 <Route path='/' exact component={Home}></Route>
                 <Route path='/pricingrates' exact component={PricingRates}></Route>
-                <Route path='/login' exact component={Login}></Route>
+                <Route path='/login'  render={props => <Login {...props} userRole={this.props.userRole} user={this.props.user}/>} />
                 <Route path='/register' exact component={Register}></Route>
             </Switch>
             <Footer />
         </Router>
         </div>
-    )
+        );
+    }
 }
 
 
