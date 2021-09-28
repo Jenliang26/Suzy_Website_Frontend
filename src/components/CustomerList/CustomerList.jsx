@@ -1,33 +1,51 @@
-// import axios from 'axios';
-// import "./CustomerList.css";
-// import { Component } from 'react';
-// import "./GetCustomer";
+import axios from 'axios';
+import "./CustomerList.css";
+import { Component } from 'react';
+import GetCustomer from "./GetCustomer";
 
 
-// class CustomerList extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {}
-//     }
+class CustomerList extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            customers: []
+        }
+    }
     
-//     componentDidMount () {
-//         this.GetCustomerList ()
-//     }
+    componentWillMount () {
+        this.GetCustomerList ()
+    }
 
-//     async GetCustomerList() {
-//         let response = await axios.get('http://127.0.0.1:8000/api/accounts/customers/'),
-//         customerlist = response.data
-//         console.log(customerlist.data)
-//     }
+    async GetCustomerList() {
+        let response = await axios.get('http://127.0.0.1:8000/api/accounts/customers/')
+        this.setState({customers: response.data})
+        console.log(this.state.customers)
+    }
     
 
-//     render() {
-//         return (
-//             <div>
-//                 <GetCustomer  CustomerList = {this.state.customerlist} />
-//             </div>
-//         );
-//     }
-// }
+    render() {
+        let customers = this.state.customers
 
-// export default CustomerList;
+        return (
+        <div className="customerliststyle">
+          <h3 className="p-3 text-center">Customers</h3>
+            <table className="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                {customers.map((customer, i) => (
+                    <GetCustomer customer={customer} key={i}/>
+                 ))}
+            </tbody>
+            </table>
+        </div>
+        );
+    }
+}
+
+export default CustomerList;

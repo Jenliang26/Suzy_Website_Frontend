@@ -8,9 +8,11 @@ import {
 } from "react-router-dom";
 import Home from './../Home/Home';
 import Orders from '../Orders/Orders';
-// import Inventory from './../Inventory/Inventory';
+import CustomerList from '../CustomerList/CustomerList';
+import Inventories from '../Inventory/Inventory';
 import Footer from './../Footer/Footer.jsx';
 import React, {Component} from 'react';
+import CustomerSite from '../CustomerSite/CustomerSite';
 
 class EmployeeSite extends Component {
     constructor(props) {
@@ -33,8 +35,9 @@ class EmployeeSite extends Component {
             </Navbar>
             <Switch>
                 <Route path='/' exact component={Home}></Route>
-                <Route path='/orders'  render={props => <Orders {...props} user={this.props.user}/>} />
-                {/* <Route path='/inventory' exact component={Inventory}></Route> */}
+                <Route path='/orders' render={props => <Orders {...props} user={this.props.user}/>} />
+                <Route path='/customers' render={props => <CustomerList {...props}/>} />
+                <Route path='/inventory' render={props => <Inventories {...props}/>} />
             </Switch>
             <Footer />
         </Router>

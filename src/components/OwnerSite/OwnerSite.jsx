@@ -7,6 +7,10 @@ import {
     Link
 } from "react-router-dom";
 import Home from './../Home/Home';
+import Orders from '../Orders/Orders';
+import EmployeeList from './../EmployeeList/EmployeeList';
+import CustomerList from '../CustomerList/CustomerList';
+import Inventories from '../Inventory/Inventory';
 import Footer from './../Footer/Footer.jsx';
 import React, {Component} from 'react';
 
@@ -33,6 +37,10 @@ class OwnerSite extends Component {
             </Navbar>
             <Switch>
                 <Route path='/home' exact component={Home}></Route>
+                <Route path='/orders' render={props => <Orders {...props} user={this.props.user}/>} />
+                <Route path='/employees' render={props => <EmployeeList {...props}/>} />
+                <Route path='/customers' render={props => <CustomerList {...props}/>} />
+                <Route path='/inventory' render={props => <Inventories {...props}/>} />
             </Switch>
             <Footer />
         </Router>

@@ -36,7 +36,7 @@ class App extends Component {
           console.log(this.state) 
           if (user != 'undefined') {
             let uid = user.user_id
-            this.getCustomerInfo(uid)
+            this.getUserInfo(uid)
           }
           console.log(user) 
           console.log(this.state.userRole)
@@ -45,11 +45,16 @@ class App extends Component {
       }
   }
 
-  async getCustomerInfo(uid) {
-    let request = await axios.get('http://127.0.0.1:8000/api/accounts/customers/user/' + uid, 
+  async getUserInfo(uid) {
+    try{
+        let request = await axios.get('http://127.0.0.1:8000/api/accounts/customers/user/' + uid, 
             {headers:{'Access-Control-Allow-Origin':true}})
-            console.log(request.data)
-            this.setState({userRole:'Customer', user:request.data})
+        this.setState({userRole:'Customer', user:request.data})
+    }catch (error){
+        let requeste = await axios.get('http://127.0.0.1:8000/api/accounts/employees/user/' + uid, 
+            {headers:{'Access-Control-Allow-Origin':true}})
+        this.setState({userRole:'Employee', user:requeste.data})
+    }
   }
 
   render(){

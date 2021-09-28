@@ -27,7 +27,7 @@ class Orders extends Component {
         let orders = this.state.orders
 
         return (
-        <div className="inventorystyle">
+        <div className="orderstyle">
           <h3 className="p-3 text-center">Your Orders</h3>
             <table className="table table-striped table-bordered">
             <thead>
