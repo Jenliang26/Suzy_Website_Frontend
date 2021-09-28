@@ -11,6 +11,7 @@ import Orders from '../Orders/Orders';
 import EmployeeList from './../EmployeeList/EmployeeList';
 import CustomerList from '../CustomerList/CustomerList';
 import Inventories from '../Inventory/Inventory';
+import Logout from '../Logout/Logout';
 import Footer from './../Footer/Footer.jsx';
 import React, {Component} from 'react';
 
@@ -41,6 +42,7 @@ class OwnerSite extends Component {
                 <Route path='/employees' render={props => <EmployeeList {...props}/>} />
                 <Route path='/customers' render={props => <CustomerList {...props}/>} />
                 <Route path='/inventory' render={props => <Inventories {...props}/>} />
+                <Route path='/logout'  render={props => <Logout {...props} userRole={this.props.userRole}/>} />
             </Switch>
             <Footer />
         </Router>
