@@ -15,7 +15,7 @@ class App extends Component {
       super(props);
       this.state = {
         user:[],
-        userRole : "Not Logged In"
+        userRole: "Not Logged In"
 
       }
   }

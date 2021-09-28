@@ -10,9 +10,11 @@ import Home from './../Home/Home';
 import Orders from '../Orders/Orders';
 import CustomerList from '../CustomerList/CustomerList';
 import Inventories from '../Inventory/Inventory';
+import Logout from '../Logout/Logout';
 import Footer from './../Footer/Footer.jsx';
 import React, {Component} from 'react';
 import CustomerSite from '../CustomerSite/CustomerSite';
+
 
 class EmployeeSite extends Component {
     constructor(props) {
@@ -38,6 +40,7 @@ class EmployeeSite extends Component {
                 <Route path='/orders' render={props => <Orders {...props} user={this.props.user}/>} />
                 <Route path='/customers' render={props => <CustomerList {...props}/>} />
                 <Route path='/inventory' render={props => <Inventories {...props}/>} />
+                <Route path='/logout'  render={props => <Logout {...props} userRole={this.props.userRole}/>} />
             </Switch>
             <Footer />
         </Router>

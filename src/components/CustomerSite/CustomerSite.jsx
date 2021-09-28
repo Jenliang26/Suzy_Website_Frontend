@@ -9,8 +9,10 @@ import {
 import Home from './../Home/Home';
 import PricingRates from './../PricingRates/PricingRates';
 import Orders from '../Orders/Orders';
+import Logout from '../Logout/Logout';
 import Footer from './../Footer/Footer.jsx';
 import React, {Component} from 'react';
+
 
 
 
@@ -38,6 +40,8 @@ class CustomerSite extends Component {
                 <Route path='/' exact component={Home}></Route>
                 <Route path='/pricingrates' exact component={PricingRates}></Route>
                 <Route path='/yourorders'  render={props => <Orders {...props} user={this.props.user}/>} />
+                <Route path='/logout'  render={props => <Logout {...props} userRole={this.props.userRole}/>} />
+
             </Switch>
             <Footer />
             </Router>
