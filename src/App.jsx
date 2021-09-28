@@ -51,9 +51,13 @@ class App extends Component {
             {headers:{'Access-Control-Allow-Origin':true}})
         this.setState({userRole:'Customer', user:request.data})
     }catch (error){
+        try{
         let requeste = await axios.get('http://127.0.0.1:8000/api/accounts/employees/user/' + uid, 
             {headers:{'Access-Control-Allow-Origin':true}})
         this.setState({userRole:'Employee', user:requeste.data})
+        }catch (error){
+            this.setState({userRole: 'Owner'})
+        }
     }
   }
 
