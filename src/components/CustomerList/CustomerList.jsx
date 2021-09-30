@@ -32,9 +32,9 @@ class CustomerList extends Component {
             <table className="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>User</th>
                     <th>Name</th>
                     <th>Phone Number</th>
+                    <th>Email</th>
                 </tr>
             </thead>
             <tbody>
