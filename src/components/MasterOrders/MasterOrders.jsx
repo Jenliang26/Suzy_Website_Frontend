@@ -32,6 +32,7 @@ class MasterOrders extends Component {
             <table className="table table-striped table-bordered">
             <thead>
                 <tr>
+                    <th>Order ID</th>
                     <th>Customer</th>
                     <th>Phone Number</th>
                     <th>Date</th>
