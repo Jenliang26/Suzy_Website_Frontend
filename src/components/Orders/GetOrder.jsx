@@ -13,9 +13,9 @@ class GetOrder extends Component {
         console.log(this.props)
         return(
             <tr>
-                <td>Date: {this.props.order.date}</td>
-                <td>Notes: {this.props.order.notes}</td>
-                <td>Status {this.props.order.status}</td>
+                <td>{this.props.order.date}</td>
+                <td>{this.props.order.notes}</td>
+                <td>{this.props.order.status}</td>
                 <td>View</td>
             </tr>
         );

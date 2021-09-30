@@ -13,9 +13,7 @@ class GetEmployee extends Component {
         console.log(this.props)
         return(
             <tr>
-                <td>User: {this.props.employee.user}</td>
-                <td>Name: {this.props.employee.name}</td>
-                <td>View</td>
+                <td>{this.props.employee.name}</td>
             </tr>
         );
     }

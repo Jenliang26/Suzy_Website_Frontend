@@ -32,7 +32,6 @@ class EmployeeList extends Component {
             <table className="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>User</th>
                     <th>Name</th>
                 </tr>
             </thead>

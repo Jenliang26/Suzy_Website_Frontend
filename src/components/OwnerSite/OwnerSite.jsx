@@ -7,7 +7,7 @@ import {
     Link
 } from "react-router-dom";
 import Home from './../Home/Home';
-import Orders from '../Orders/Orders';
+import MasterOrders from '../MasterOrders/MasterOrders';
 import EmployeeList from './../EmployeeList/EmployeeList';
 import CustomerList from '../CustomerList/CustomerList';
 import Inventories from '../Inventory/Inventory';
@@ -29,7 +29,7 @@ class OwnerSite extends Component {
                 <NavbarBrand href=""><img src={Logo}></img></NavbarBrand>
                 <Nav>
                     <Nav.Item><Nav.Link href="/home">Home</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/orders">Orders</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/masterorders">Orders</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/employees">Employees</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/customers">Customers</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/inventory">Inventory</Nav.Link></Nav.Item>
@@ -37,8 +37,8 @@ class OwnerSite extends Component {
                 </Nav>
             </Navbar>
             <Switch>
-                <Route path='/home' exact component={Home}></Route>
-                <Route path='/orders' render={props => <Orders {...props} user={this.props.user}/>} />
+                <Route path='/' exact component={Home}></Route>
+                <Route path='/masterorders' render={props => <MasterOrders {...props} user={this.props.user}/>} />
                 <Route path='/employees' render={props => <EmployeeList {...props}/>} />
                 <Route path='/customers' render={props => <CustomerList {...props}/>} />
                 <Route path='/inventory' render={props => <Inventories {...props}/>} />
