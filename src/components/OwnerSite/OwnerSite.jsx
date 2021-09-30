@@ -12,6 +12,7 @@ import EmployeeList from './../EmployeeList/EmployeeList';
 import CustomerList from '../CustomerList/CustomerList';
 import Inventories from '../Inventory/Inventory';
 import Logout from '../Logout/Logout';
+import CustomerSearch from '../CustomerList/CustomerSearch';
 import Footer from './../Footer/Footer.jsx';
 import React, {Component} from 'react';
 
@@ -34,6 +35,7 @@ class OwnerSite extends Component {
                     <Nav.Item><Nav.Link href="/customers">Customers</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/inventory">Inventory</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/logout">Log Out</Nav.Link></Nav.Item>
+                    <CustomerSearch />
                 </Nav>
             </Navbar>
             <Switch>

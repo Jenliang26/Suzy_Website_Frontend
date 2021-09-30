@@ -64,10 +64,11 @@ class GetCustomer extends Component {
                     </p>
                     <h5>Orders</h5>
                     <p>
-                    List of orders
+                    List of orders and their statuses 
                     </p>
                 </Modal.Body>
                 <Modal.Footer>
+                    <Button>New Order</Button>
                     <Button onClick={this.hidemodal}>Close</Button>
                 </Modal.Footer>
                 </Modal>
