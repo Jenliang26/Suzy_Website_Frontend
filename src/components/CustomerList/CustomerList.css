@@ -1,0 +1,15 @@
+#GoButton
+{
+    background-color: rgb(19, 85, 10);
+    font-size: 18px;
+    padding: 1px 1px;
+    position: right;
+    top: 0;
+}
+
+#SearchWord
+{
+    color: rgba(0,0,0,.5);
+    font-size: 18px;
+    padding-top: 7px;
+}
