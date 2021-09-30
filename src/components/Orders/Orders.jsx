@@ -32,6 +32,7 @@ class Orders extends Component {
             <table className="table table-striped table-bordered">
             <thead>
                 <tr>
+                    <th>Order Number</th>
                     <th>Date</th>
                     <th>Notes</th>
                     <th>Status</th> 
