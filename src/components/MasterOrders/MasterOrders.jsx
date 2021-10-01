@@ -2,6 +2,8 @@ import axios from 'axios';
 import "./MasterOrders.css";
 import { Component } from 'react';
 import GetMasterOrder from "./GetMasterOrder";
+import Button from 'react-bootstrap/button';
+
 
 
 class MasterOrders extends Component {
@@ -10,6 +12,7 @@ class MasterOrders extends Component {
         this.state = {
             masterorders: []
         }
+        this.createneworder = this.createneworder.bind(this);
     }
     
     componentWillMount () {
@@ -22,12 +25,16 @@ class MasterOrders extends Component {
         console.log(this.state.masterorders)
     }
     
+    createneworder() {
+        window.location = '/neworder';
+    }
 
     render() {
         let masterorders = this.state.masterorders
 
         return (
         <div className="masterorderstyle">
+            <Button onClick={this.createneworder}>Create New Order</Button>
           <h3 className="p-3 text-center">Orders</h3>
             <table className="table table-striped table-bordered">
             <thead>
@@ -37,7 +44,8 @@ class MasterOrders extends Component {
                     <th>Phone Number</th>
                     <th>Date</th>
                     <th>Notes</th>
-                    <th>Status</th> 
+                    <th>Status</th>
+                    <th>Additional Info</th>
                 </tr>
             </thead>
             <tbody>

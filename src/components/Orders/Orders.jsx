@@ -36,6 +36,7 @@ class Orders extends Component {
                     <th>Date</th>
                     <th>Notes</th>
                     <th>Status</th> 
+                    <th>Additional Info</th>
                 </tr>
             </thead>
             <tbody>
