@@ -2,6 +2,7 @@ import axios from 'axios';
 import "./CustomerList.css";
 import { Component } from 'react';
 import GetCustomer from "./GetCustomer";
+import CustomerSearch from './CustomerSearch'
 
 
 class CustomerList extends Component {
@@ -28,13 +29,18 @@ class CustomerList extends Component {
 
         return (
         <div className="customerliststyle">
-          <h3 className="p-3 text-center">Customers</h3>
+            <div className="row">
+                <div className="col-4"></div>
+                <div className="col-4"><h3 className="p-3 text-center">Customers</h3></div>
+                <div className="col-4 text-right"><CustomerSearch /></div>
+            </div>
             <table className="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>Phone Number</th>
                     <th>Email</th>
+                    <th>Additional Info</th>
                 </tr>
             </thead>
             <tbody>
