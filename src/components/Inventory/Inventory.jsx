@@ -2,14 +2,41 @@ import axios from 'axios';
 import "./Inventory.css";
 import { Component } from 'react';
 import InventoryItem from "./InventoryItem";
+import Button from 'react-bootstrap/button';
+import { Modal, Table } from 'react-bootstrap';
 
 
 class Inventories extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            inventories: []
+            inventories: [],
+            showmodal: false,
+            newinventoryitem: {
+                Name: "",
+                Description: "",
+                Quantity: "",
+                Category: ""
+            }
         }
+        this.createnewinventory=this.createnewinventory.bind(this);
+        this.showmodal = this.showmodal.bind(this);
+        this.hidemodal = this.hidemodal.bind(this);
+    }
+
+    showmodal() {
+        this.setState({showmodal: true})
+        this.forceUpdate()
+    }
+
+    hidemodal() {
+        this.setState({
+            showmodal: false
+        })
+    }
+
+    createnewinventory() {
+        console.log("Did it create new inventory??????")
     }
     
     componentWillMount () {
@@ -27,8 +54,50 @@ class Inventories extends Component {
         let inventories = this.state.inventories
 
         return (
-        <div className="inventorystyle">
-          <h3 className="p-3 text-center">Inventories</h3>
+        <div className="row">
+        <div className="col-2">
+            <Button onClick={this.showmodal}>Create New Inventory</Button>
+            <Modal
+                    show={this.state.showmodal}
+                    size="lg"
+                    aria-labelledby="contained-modal-title-vcenter"
+                    centered
+                >
+                <Modal.Header>
+                    <Modal.Title id="contained-modal-title-vcenter">
+                    New Inventory
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Name</td>
+                                <td><input></input></td>
+                            </tr>
+                            <tr>
+                                <td>Description</td>
+                                <td><input></input></td>
+                            </tr>
+                            <tr>
+                                <td>Quantity</td>
+                                <td><input></input></td>
+                            </tr>
+                            <tr>
+                                <td>Category</td>
+                                <td><input></input></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button onClick={this.createnewinventory}>Add</Button>
+                    <Button onClick={this.hidemodal}>Close</Button>
+                </Modal.Footer>
+                </Modal>
+        </div>
+        <div className="col-8 text-center">
+          <h3>Inventories</h3>
             <table className="table table-striped table-bordered">
             <thead>
                 <tr>
@@ -44,6 +113,8 @@ class Inventories extends Component {
                  ))}
             </tbody>
             </table>
+        </div>
+        <div className="col-2"></div>
         </div>
         );
     }
