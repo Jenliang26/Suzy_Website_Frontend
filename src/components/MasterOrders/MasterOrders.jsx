@@ -49,8 +49,8 @@ class MasterOrders extends Component {
                 </tr>
             </thead>
             <tbody>
-                {masterorders.map((masterorder, i) => (
-                    <GetMasterOrder masterorder={masterorder} key={i}/>
+                {masterorders.map((order, i) => (
+                    <GetMasterOrder order={order} key={i} masterorder={this.state.masterorders}/>
                  ))}
             </tbody>
             </table>

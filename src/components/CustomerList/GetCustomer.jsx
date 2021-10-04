@@ -19,6 +19,12 @@ class GetCustomer extends Component {
         this.hidemodal = this.hidemodal.bind(this);
     }
 
+    async GetCustomerList() {
+        let response = await axios.get('http://127.0.0.1:8000/api/accounts/customers/')
+        this.setState({customers: response.data})
+        this.setState({isdeleted: false})
+    }
+
     ShowCustomer() {
         this.setState({showmodal: true})
         this.forceUpdate()
@@ -54,7 +60,7 @@ class GetCustomer extends Component {
                 <td>{this.props.customer.name}</td>
                 <td>{this.props.customer.phone_number}</td>
                 <td>{this.state.user.email}</td>
-                <td><Button onClick={this.ShowCustomer}/>
+                <td><Button onClick={this.ShowCustomer}>View</Button>
                 <Modal
                     show={this.state.showmodal}
                     size="lg"

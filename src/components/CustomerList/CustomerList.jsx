@@ -37,12 +37,24 @@ class CustomerList extends Component {
 
     async createnewcustomer(event) {
         event.preventDefault()
-        let newcustomer = {
-            Firstname: this.state.first_name,
-            Lastname: this.state.last_name,
-            Phone_number: this.state.phone_number,
-            Email: this.state.email
+        let rnd = Math.floor(Math.random()*500000)
+        let newuser = {
+            username: "Customer0" + rnd,
+            password: "Asianp1g!",
+            email: this.state.email,
+            first_name: this.state.first_name,
+            last_name: this.state.last_name
         }
+
+        let requestu = await axios.post('http://127.0.0.1:8000/api/auth/register/', newuser)
+        let id = requestu.data.id
+
+        let newcustomer = {
+            user: id,
+            name: this.state.first_name + " " + this.state.last_name,
+            phone_number: this.state.phone_number
+        }
+        
         let request = await axios.post('http://127.0.0.1:8000/api/accounts/customers/', newcustomer)
         this.GetCustomerList()
         this.setState({
@@ -87,19 +99,19 @@ class CustomerList extends Component {
                         <tbody>
                             <tr>
                                 <td>First Name</td>
-                                <td><input onChange={(e) => this.setState({Firstname: e.target.value})} value={this.state.first_name} name="first_name" id="first_name" type="text" /></td>
+                                <td><input onChange={(e) => this.setState({first_name: e.target.value})} value={this.state.first_name} name="first_name" id="first_name" type="text" /></td>
                             </tr>
                             <tr>
                                 <td>Last Name</td>
-                                <td><input onChange={(e) => this.setState({Lastname: e.target.value})} value={this.state.last_name} name="last_name" id="last_name" type="text" /></td>
+                                <td><input onChange={(e) => this.setState({last_name: e.target.value})} value={this.state.last_name} name="last_name" id="last_name" type="text" /></td>
                             </tr>
                             <tr>
                                 <td>Phone Number</td>
-                                <td><input onChange={(e) => this.setState({Phonenumber: e.target.value})} value={this.state.phone_number} name="phone_number" id="phone_number" type="text" /></td>
+                                <td><input onChange={(e) => this.setState({phone_number: e.target.value})} value={this.state.phone_number} name="phone_number" id="phone_number" type="text" /></td>
                             </tr>
                             <tr>
                                 <td>Email</td>
-                                <td><input onChange={(e) => this.setState({Email: e.target.value})} value={this.state.email} name="email" id="email" type="text" /></td>
+                                <td><input onChange={(e) => this.setState({email: e.target.value})} value={this.state.email} name="email" id="email" type="text" /></td>
                             </tr>
                         </tbody>
                     </table>

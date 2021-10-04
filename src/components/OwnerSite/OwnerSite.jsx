@@ -29,7 +29,7 @@ class OwnerSite extends Component {
             <Navbar className="mynav" variant="light">
                 <NavbarBrand href=""><img src={Logo}></img></NavbarBrand>
                 <Nav>
-                    <Nav.Item><Nav.Link href="/home">Home</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/masterorders">Orders</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/employees">Employees</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/customers">Customers</Nav.Link></Nav.Item>

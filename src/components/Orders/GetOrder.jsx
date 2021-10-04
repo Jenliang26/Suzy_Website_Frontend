@@ -34,7 +34,7 @@ class GetOrder extends Component {
                 <td>{this.props.order.date}</td>
                 <td>{this.props.order.notes}</td>
                 <td>{this.props.order.status}</td>
-                <td><Button onClick={this.ShowOrder}/>
+                <td><Button onClick={this.ShowOrder}>View</Button>
                 <Modal
                     show={this.state.showmodal}
                     size="lg"

@@ -34,8 +34,6 @@ class CreateOrder extends Component {
         })
     }
 
-     
-
     render() {
         return(
             <div className="masterorderstyle">
