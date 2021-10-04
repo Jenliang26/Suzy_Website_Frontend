@@ -10,6 +10,7 @@ import Home from './../Home/Home';
 import MasterOrders from '../MasterOrders/MasterOrders';
 import CustomerList from '../CustomerList/CustomerList';
 import Inventories from '../Inventory/Inventory';
+import CreateOrder from '../MasterOrders/CreateOrder';
 import Logout from '../Logout/Logout';
 import Footer from './../Footer/Footer.jsx';
 import React, {Component} from 'react';
@@ -40,6 +41,7 @@ class EmployeeSite extends Component {
                 <Route path='/masterorders' render={props => <MasterOrders {...props} user={this.props.user}/>} />
                 <Route path='/customers' render={props => <CustomerList {...props}/>} />
                 <Route path='/inventory' render={props => <Inventories {...props}/>} />
+                <Route path='/neworder' render={props => <CreateOrder {...props}/>} />
                 <Route path='/logout'  render={props => <Logout {...props} userRole={this.props.userRole}/>} />
             </Switch>
             <Footer />

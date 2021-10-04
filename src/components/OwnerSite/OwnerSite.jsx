@@ -43,8 +43,8 @@ class OwnerSite extends Component {
                 <Route path='/employees' render={props => <EmployeeList {...props}/>} />
                 <Route path='/customers' render={props => <CustomerList {...props}/>} />
                 <Route path='/inventory' render={props => <Inventories {...props}/>} />
-                <Route path='/logout'  render={props => <Logout {...props} userRole={this.props.userRole}/>} />
                 <Route path='/neworder' render={props => <CreateOrder {...props}/>} />
+                <Route path='/logout'  render={props => <Logout {...props} userRole={this.props.userRole}/>} />
             </Switch>
             <Footer />
         </Router>
