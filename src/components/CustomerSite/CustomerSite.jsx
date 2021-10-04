@@ -39,9 +39,8 @@ class CustomerSite extends Component {
             <Switch>
                 <Route path='/' exact component={Home}></Route>
                 <Route path='/pricingrates' exact component={PricingRates}></Route>
-                <Route path='/yourorders'  render={props => <Orders {...props} user={this.props.user}/>} />
+                <Route path='/yourorders'  render={props => <Orders {...props} user={this.props.user.id}/>} />
                 <Route path='/logout'  render={props => <Logout {...props} userRole={this.props.userRole}/>} />
-
             </Switch>
             <Footer />
             </Router>

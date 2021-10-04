@@ -27,7 +27,6 @@ class GetOrder extends Component {
     }
 
     render() {
-        console.log(this.props)
         return(
             <tr>
                 <td>{this.props.order.id}</td>
