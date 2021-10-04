@@ -7,16 +7,23 @@ class InventoryItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            inventories: this.props.inventories
         }
         this.deleteinventoryitem=this.deleteinventoryitem.bind(this)
     }
 
+    async GetInventories() {
+        let response = await axios.get('http://127.0.0.1:8000/api/inventory/')
+        this.setState({inventories: response.data})
+        this.forceUpdate()
+    }
+
     deleteinventoryitem() {
         let response = axios.delete('http://127.0.0.1:8000/api/inventory/item/' + this.props.inventory.id)
+        this.GetInventories()
     }
 
     render() {
-        console.log(this.props)
         return(
             <tr>
                 <td>{this.props.inventory.name}</td>
