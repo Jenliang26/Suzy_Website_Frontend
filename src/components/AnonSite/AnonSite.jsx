@@ -10,6 +10,7 @@ import Home from './../Home/Home';
 import PricingRates from './../PricingRates/PricingRates';
 import Login from './../Login/Login';
 import Register from './../Register/Register';
+import OrderStatus from './../OrderStatus/OrderStatus';
 import Footer from './../Footer/Footer.jsx';
 import React, {Component} from 'react';
 
@@ -38,6 +39,7 @@ class AnonSite extends Component {
                 <Route path='/pricingrates' exact component={PricingRates}></Route>
                 <Route path='/login'  render={props => <Login {...props} userRole={this.props.userRole} user={this.props.user}/>} />
                 <Route path='/register' exact component={Register}></Route>
+                <Route path='/orderstatus' exact component={OrderStatus}></Route>
             </Switch>
             <Footer />
         </Router>
