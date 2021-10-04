@@ -28,6 +28,7 @@ class Reviews extends Component {
         }
         console.log(comment)
         let response = await axios.post('http://127.0.0.1:8000/api/reviews/', comment)
+        window.location = '/';
     }
 
     render() {
