@@ -42,12 +42,21 @@ class GetOrder extends Component {
                 >
                 <Modal.Header>
                     <Modal.Title id="contained-modal-title-vcenter">
-                    Order Status
+                    Order Statuses
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <p>
-                    Show progress somehow
+                    Status 1: Order created
+                    </p>
+                    <p>
+                    Status 2: Order started
+                    </p>
+                    <p>
+                    Status 3: Order complete/Ready for pick up
+                    </p>
+                    <p>
+                    Status 4: Picked up by customer
                     </p>
                 </Modal.Body>
                 <Modal.Footer>
