@@ -135,8 +135,8 @@ class CustomerList extends Component {
                 </tr>
             </thead>
             <tbody>
-                {customers.map((customer, i) => (
-                    <GetCustomer customer={customer} key={i}/>
+                {customers.map((customer, key) => (
+                    <GetCustomer customer={customer} key={key}/>
                  ))}
             </tbody>
             </table>
