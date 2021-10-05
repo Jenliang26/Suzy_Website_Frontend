@@ -10,6 +10,7 @@ import Home from './../Home/Home';
 import MasterOrders from '../MasterOrders/MasterOrders';
 import EmployeeList from './../EmployeeList/EmployeeList';
 import CustomerList from '../CustomerList/CustomerList';
+import CustomerSearch from '../CustomerList/CustomerSearch';
 import Inventories from '../Inventory/Inventory';
 import CreateOrder from '../MasterOrders/CreateOrder';
 import Logout from '../Logout/Logout';
@@ -33,6 +34,7 @@ class OwnerSite extends Component {
                     <Nav.Item><Nav.Link href="/masterorders">Orders</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/employees">Employees</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/customers">Customers</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/search">Search Customers</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/inventory">Inventory</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/logout">Log Out</Nav.Link></Nav.Item>
                 </Nav>
@@ -44,6 +46,7 @@ class OwnerSite extends Component {
                 <Route path='/customers' render={props => <CustomerList {...props}/>} />
                 <Route path='/inventory' render={props => <Inventories {...props}/>} />
                 <Route path='/neworder' render={props => <CreateOrder {...props}/>} />
+                <Route path='/search' render={props => <CustomerSearch {...props}/>} />
                 <Route path='/logout'  render={props => <Logout {...props} userRole={this.props.userRole}/>} />
             </Switch>
             <Footer />
