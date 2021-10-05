@@ -9,6 +9,7 @@ import {
 import Home from './../Home/Home';
 import MasterOrders from '../MasterOrders/MasterOrders';
 import CustomerList from '../CustomerList/CustomerList';
+import CustomerSearch from '../CustomerList/CustomerSearch';
 import Inventories from '../Inventory/Inventory';
 import CreateOrder from '../MasterOrders/CreateOrder';
 import Logout from '../Logout/Logout';
@@ -31,6 +32,7 @@ class EmployeeSite extends Component {
                 <Nav>
                     <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/customers">Customers</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/search">Search Customers</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/masterorders">Orders</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/inventory">Inventory</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/logout">Log Out</Nav.Link></Nav.Item>
@@ -40,6 +42,7 @@ class EmployeeSite extends Component {
                 <Route path='/' exact component={Home}></Route>
                 <Route path='/masterorders' render={props => <MasterOrders {...props} user={this.props.user}/>} />
                 <Route path='/customers' render={props => <CustomerList {...props}/>} />
+                <Route path='/search' exact component={CustomerSearch} />
                 <Route path='/inventory' render={props => <Inventories {...props}/>} />
                 <Route path='/neworder' render={props => <CreateOrder {...props}/>} />
                 <Route path='/logout'  render={props => <Logout {...props} userRole={this.props.userRole}/>} />
