@@ -36,9 +36,9 @@ class Reviews extends Component {
             <div className="text-center">
                 <h3>Name</h3>
                 <input onChange={(e) => this.setState({name: e.target.value})} value={this.state.name} name="name" id="name" type="text" />
-                <h3>Rating</h3>
+                <h3>Please leave a rating of 1-5 </h3>
                 <input onChange={(e) => this.setState({rating: e.target.value})} value={this.state.rating} name="rating" id="rating" type="text" />
-                <h3>Review</h3>
+                <h3>Please leave your review below</h3>
                 <textarea rows="5" cols="80" onChange={(e) => this.setState({review: e.target.value})} value={this.state.review} name="review" id="review" type="text" />
                 <br />
                 <Button onClick={this.postreview}>Add Review</Button>

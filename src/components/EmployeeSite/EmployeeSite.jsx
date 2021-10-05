@@ -30,8 +30,8 @@ class EmployeeSite extends Component {
                 <NavbarBrand href=""><img src={Logo}></img></NavbarBrand>
                 <Nav>
                     <Nav.Item><Nav.Link href="/">Home</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/masterorders">Orders</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/customers">Customers</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/masterorders">Orders</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/inventory">Inventory</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link href="/logout">Log Out</Nav.Link></Nav.Item>
                 </Nav>
