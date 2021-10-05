@@ -113,7 +113,6 @@ class GetCustomer extends Component {
                     </table>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button>New Order</Button>
                     <Button onClick={this.hidemodal}>Close</Button>
                 </Modal.Footer>
                 </Modal>
