@@ -3,6 +3,8 @@ import "./Orders.css";
 import { Component } from 'react';
 import Button from 'react-bootstrap/button';
 import { Modal } from 'react-bootstrap';
+import ORDER_STATUS from '../OrderStatusDictionary/OrderStatusDictionary';
+
 
 class GetOrder extends Component {
     constructor(props) {
@@ -32,7 +34,7 @@ class GetOrder extends Component {
                 <td>{this.props.order.id}</td>
                 <td>{this.props.order.date}</td>
                 <td>{this.props.order.notes}</td>
-                <td>{this.props.order.status}</td>
+                <td>{ORDER_STATUS.ORDER_STATUS[this.props.order.status]}</td>
                 <td><Button onClick={this.ShowOrder}>View</Button>
                 <Modal
                     show={this.state.showmodal}

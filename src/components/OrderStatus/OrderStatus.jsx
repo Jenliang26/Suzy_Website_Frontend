@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Component } from 'react';
 import Button from 'react-bootstrap/button';
+import ORDER_STATUS from '../OrderStatusDictionary/OrderStatusDictionary';
 
 
 class OrderStatus extends Component {
@@ -20,6 +21,7 @@ class OrderStatus extends Component {
     }
 
     render() {
+        console.log(ORDER_STATUS.ORDER_STATUS[this.state.status])
         return(
             <div className= "text-center">
                 <br />
@@ -32,7 +34,7 @@ class OrderStatus extends Component {
                     <thead>
                         <tr>
                             <th>Status: </th>
-                            <td>{this.state.status}</td>
+                            <td>{ORDER_STATUS.ORDER_STATUS[this.state.status]}</td>
                         </tr>
                     </thead>
                 </table>
